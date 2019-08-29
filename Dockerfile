@@ -5,29 +5,30 @@ RUN apt-get update -yqq && \
     curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     apt-get install \
         git \
-        nodejs \
-        libcurl4-gnutls-dev \
-        libicu-dev \
-        libmcrypt-dev \
-        libvpx-dev \
-        libjpeg-dev \
-        libpng-dev \
-        libxpm-dev \
-        zlib1g-dev \
-        libfreetype6-dev \
-        libxml2-dev \
-        libexpat1-dev \
-        libbz2-dev \
-        libgmp3-dev \
-        libldap2-dev \
-        unixodbc-dev \
-        libpq-dev \
-        libsqlite3-dev \
         libaspell-dev \
-        libsnmp-dev \
+        libbz2-dev \
+        libcurl4-gnutls-dev \
+        libexpat1-dev \
+        libfreetype6-dev \
+        libgmp3-dev \
+        libicu-dev \
+        libjpeg-dev \
+        libldap2-dev \
+        libmcrypt-dev \
         libpcre3-dev \
+        libpng-dev \
+        libpq-dev \
+        libsnmp-dev \
+        libsqlite3-dev \
         libtidy-dev \
+        libvpx-dev \
+        libxml2-dev \
+        libxpm-dev \
         libzip-dev \
+        nodejs \
+        npm \
+        unixodbc-dev \
+        zlib1g-dev \
         -yqq && \
     pecl install xdebug && \
     docker-php-ext-install mbstring pdo_mysql curl json intl gd xml zip bz2 opcache bcmath pcntl && \
