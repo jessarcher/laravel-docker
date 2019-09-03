@@ -28,6 +28,7 @@ RUN apt-get update -yqq && \
         nodejs \
         npm \
         unixodbc-dev \
+        unzip \
         zlib1g-dev \
         -yqq && \
     pecl install xdebug && \
