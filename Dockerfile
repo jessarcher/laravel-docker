@@ -3,10 +3,10 @@ FROM php:fpm-alpine
 WORKDIR /code
 
 RUN apk add \
-        # for zip
+        # for zip extension
         libzip-dev \
         zlib-dev \
-        # for intl
+        # for intl extension
         icu-dev \
     && \
     docker-php-ext-install \
@@ -16,4 +16,5 @@ RUN apk add \
         zip
 
 ENV COMPOSER_HOME=./.composer
+ENV PATH ./vendor/bin:/composer/vendor/bin:$PATH
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
