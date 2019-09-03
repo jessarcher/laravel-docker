@@ -3,6 +3,8 @@ FROM php:fpm-alpine
 WORKDIR /code
 
 RUN apk add \
+        # for some composer packages
+        git \
         # for zip extension
         libzip-dev \
         zlib-dev \
