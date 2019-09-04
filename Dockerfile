@@ -3,8 +3,10 @@ FROM php:fpm-alpine
 WORKDIR /code
 
 RUN apk add \
-        # for some composer packages
+        # for installing some composer packages
         git \
+        # for building assets
+        npm \
         # for zip extension
         libzip-dev \
         zlib-dev \
@@ -18,6 +20,6 @@ RUN apk add \
         zip
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-ENV COMPOSER_ALLOW_SUPERUSER 1
-ENV COMPOSER_HOME /tmp/composer
-ENV PATH ./vendor/bin:/tmp/composer/vendor/bin:$PATH
+ENV COMPOSER_ALLOW_SUPERUSER=1 \
+    COMPOSER_HOME=/tmp/composer \
+    PATH=./vendor/bin:/tmp/composer/vendor/bin:$PATH
