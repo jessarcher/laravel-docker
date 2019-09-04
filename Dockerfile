@@ -17,6 +17,7 @@ RUN apk add \
         pdo_mysql \
         zip
 
-ENV COMPOSER_HOME=./.composer
-ENV PATH ./vendor/bin:/composer/vendor/bin:$PATH
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+ENV COMPOSER_ALLOW_SUPERUSER 1
+ENV COMPOSER_HOME /tmp/composer
+ENV PATH ./vendor/bin:/tmp/composer/vendor/bin:$PATH
