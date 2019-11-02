@@ -17,6 +17,7 @@ RUN apk add \
         bcmath \
         intl \
         pdo_mysql \
+        pcntl \
         zip
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
